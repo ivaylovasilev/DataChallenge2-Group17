@@ -1,47 +1,50 @@
-# DataChallenge2-Group17
+# Data Challenge 2 - Group 17
 
-YouTube Data Analysis (youtube.py)
+## Overview
+This repository contains scripts developed by Group 17 for analyzing various aspects of public sentiment and demographic correlations in relation to the London Metropolitan Police. The analyses cover YouTube comments, geographical data processing, demographic correlations, and news article analysis using the GDELT database.
 
-The youtube.py script leverages the YouTube API to analyze public sentiment regarding the London Metropolitan Police. It collects videos based on specific keywords related to policing in London, extracting key metrics like view counts, likes, and the number of comments to gauge public engagement.
+## Scripts Description
 
-Key Features:
+### YouTube Data Analysis (`youtube.py`)
+**Description:** Analyzes public sentiment regarding the London Metropolitan Police using the YouTube API. It collects videos based on specific keywords and extracts metrics like view counts, likes, and comments.
 
-Sentiment Analysis: Utilizes TextBlob to analyze the sentiment of comments, classifying them into positive, negative, or neutral categories.
+**Key Features:**
+- **Sentiment Analysis:** Utilizes TextBlob to classify the sentiment of comments into positive, negative, or neutral categories.
+- **Categorical Analysis:** Sorts comments into predefined themes such as violence, policy changes, and police-community interactions.
+- **Engagement Metrics:** Measures public engagement through likes, views, and comment counts.
 
-Categorical Analysis: Sorts comments into predefined themes (similar to those used for news analysis) such as violence, policy changes, and police-community interactions.
+**Usage:**
+1. Configure your YouTube API key in the script.
+2. Run the script to collect and analyze data, which will help identify public sentiment trends over time.
 
-Engagement Metrics: Analyzes engagement through likes, views, and comment counts to assess the public’s reaction to the content.
+### Borough Coordinates List (`borough_coordinates_list.py`)
+**Description:** Processes geographical data for London's boroughs, converting UK National Grid coordinates to WGS84 format.
 
-How to Use:
+**Usage:**
+1. Ensure the `London_Boroughs.gpkg` file is accessible.
+2. Run the script to generate `lat-long_new.csv` containing latitude and longitude information for each borough.
 
-API Key Configuration: Ensure you have a valid YouTube API key configured in the script.
+### Demographics Correlation Analysis (`demographics_correlation.py`)
+**Description:** Reads demographic data, aggregates it by borough, and calculates correlation matrices. Also generates a heatmap of these correlations.
 
-Run the Script: Execute the script to start collecting and analyzing data. The results will provide insights into public sentiment and help identify trends over time.
-######
-borough_coordinates_list.py : Processes geographical data for London's boroughs to compute and convert bounding box coordinates from the UK National Grid to WGS84 format. The geographical data is obtained from the london datasore under the name ''London Boroughs'' The output is saved as a CSV file containing latitude and longitude information for each borough.
+**Usage:**
+1. Ensure the demographic data CSV file is accessible.
+2. Run the script to generate `borough_correlation_matrix.csv` and `borough_correlation_matrix.png`.
 
-How to use: Ensure the London_Boroughs.gpkg file is available at the specified path.
-Run the script to generate lat-long_new.csv.
+### GDELT Article Processing for 2015-2019 (`gdelt_google_cloud_15-19.py`)
+**Description:** Queries the GDELT database to collect and categorize news articles related to the London police from 2015 to 2019.
 
-######
+**Usage:**
+1. Set up Google Cloud credentials and ensure the JSON key file is accessible.
+2. Run the script carefully due to potential costs associated with Google BigQuery. Generates `articles.json` and `15-19_data_weekly.csv`.
 
-demographics_correlation.py : This script reads demographic data from a CSV file, aggregates the data by borough, and calculates the correlation matrix between boroughs based on numeric features. It also generates a heatmap of the correlation matrix and saves it as an image.
+### Article Processing Per Borough (`article_per_borough.py`)
+**Description:** Focuses on querying and processing articles for each borough based on manually specified coordinates.
 
-How to use:Ensure the demographic data CSV file is available at the specified path.
-Run the script to generate borough_correlation_matrix.csv and borough_correlation_matrix.png.
+**Usage:**
+1. Set up Google Cloud credentials and ensure the JSON key file is accessible.
+2. Run the script to generate `Barking_and_Dagenham_weekly.csv` for the specified borough.
 
-
-######
-
-gdelt_google_cloud_15-19.py : This script queries the GDELT database using Google BigQuery to collect articles related to events involving the police and London. Google Biqquery has limitied free credits hence, it should be run carefully.It processes the articles to categorize them by event type and aggregates the data weekly. The results are saved as CSV files.
-
-How to use: Set up Google Cloud credentials and ensure the JSON key file is available at the specified path.
-Run the script to generate articles.json and 15-19_data_weekly.csv.
-
-######
-
-article_per_borough.py : This script is similar to gdelt_google_cloud_15-19.py but focuses on querying and processing articles specific to each borough given their coordinates.For this project each borough's coordinates were written manually hence, the code is just an example of one borough. It categorizes events and aggregates the data weekly, saving the results as a CSV file.
-
-How to use: Set up Google Cloud credentials and ensure the JSON key file is available at the specified path.
-Run the script to generate Barking_and_Dagenham_weekly.csv.
-
+## Additional Information
+- Ensure you have the necessary permissions and access rights to use the data and APIs required by these scripts.
+- Each script's dependencies are listed at the top of the file, and it is assumed that the user has an appropriate Python environment set up to run the scripts.
