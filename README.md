@@ -48,3 +48,17 @@ This repository contains scripts developed by Group 17 for analyzing various asp
 ## Additional Information
 - Ensure you have the necessary permissions and access rights to use the data and APIs required by these scripts.
 - Each script's dependencies are listed at the top of the file, and it is assumed that the user has an appropriate Python environment set up to run the scripts.
+
+## FILE SPECIFICATION:
+Main:
+- DataMerging: Merging of News and YouTube datasets (according to date)
+- RunningRegression: Running of (nearly) all models used
+- PresentingData: used to format parts of Granular PAS Dataset, particulary convert encoded date
+- Untitled: Used to determine Restorative Justice + Bodycam conclusion, as well as Q62C's predictive power of other questions
+
+Supplementary:
+- Hierarchical: Evaluation of Hierarchical Time Series Model from Google BigCloud
+- GranularData: Exploratory Analysis
+
+## SUPPLEMENTARY DATASETS USED:
+- Demographic datasets obtained from: 
