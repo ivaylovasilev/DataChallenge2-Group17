@@ -52,6 +52,7 @@ This repository contains scripts developed by Group 17 for analyzing various asp
 ## FILE SPECIFICATION:
 Main:
 - DataMerging: Merging of News and YouTube datasets (according to date)
+- DemographicsNotebook: Creating the file containing all useful and interpolated demographic variables
 - RunningRegression: Running of (nearly) all models used
 - PresentingData: used to format parts of Granular PAS Dataset, particulary convert encoded date
 - Untitled: Used to determine Restorative Justice + Bodycam conclusion, as well as Q62C's predictive power of other questions
@@ -61,4 +62,12 @@ Supplementary:
 - GranularData: Exploratory Analysis
 
 ## SUPPLEMENTARY DATASETS USED:
-- Demographic datasets obtained from: 
+Demographic datasets obtained from:
+- 2021 London Census: https://www.nomisweb.co.uk/sources/census_2021_bulk
+- 2011 London Census: https://data.london.gov.uk/census/2021-ward-and-lsoa-estimates/
+
+- The following tables were used: 004, 006, 009, 015, 019, 021, 029, 030, 044, 051, 059, 063, 065, 066, 067, 068, 077
+
+**Usage:**
+1. Download the tables from the 2021 Census and place them in a folder named 'CensusCSV' in the same directory as the 'Demographics Notebook'
+2. Do the same for the 2011 Census, but name the folder 'Census2011' instead 
